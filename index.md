@@ -9,7 +9,9 @@ This training course will introduce you to the basic concepts of data acquisitio
 
 ## Course Schedule
 
-<iframe src="https://calendar.google.com/calendar/embed?src=7pog16il4vf64e5e62ddgrrsv4%40group.calendar.google.com&ctz=Europe%2FLisbon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<div class="responsiveCal">
+<iframe src="https://calendar.google.com/calendar/embed?height=300&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FLisbon&mode=WEEK&showPrint=0&showTabs=0&showCalendars=0&showTz=0&dates=20211122/20211203&src=N3BvZzE2aWw0dmY2NGU1ZTYyZGRncnJzdjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%239E69AF" style="border:solid 1px #777" width="800" height="300" frameborder="0" scrolling="no"></iframe>
+</div>
 
 ### Day 1 - Introduction to Bonsai
 - Introduction to Bonsai. What is visual reactive programming?
