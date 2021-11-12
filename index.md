@@ -9,36 +9,7 @@ This training course will introduce you to the basic concepts of data acquisitio
 
 ## Course Schedule
 
-<table class="markdown-body">
-    <thead>
-        <tr>
-            <th></th>
-            <th align="center">Monday</th>
-            <th align="center">Tuesday</th>
-            <th align="center">Wednesday</th>
-            <th align="center">Thursday</th>
-            <th align="center">Friday</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Seminar</td>
-            <td style="color:chocolate" align="center">Introduction to Bonsai</td>
-            <td style="color:chocolate" align="center">DeepLabCut<hr>Synchronization</td>
-            <td style="color:chocolate" align="center">Higher Order Operators</td>
-            <td style="color:chocolate" align="center">BonVision</td>
-            <td style="color:chocolate" align="center">BonZeb<hr>Automation</td>
-        </tr>
-        <tr>
-            <td>Workshop</td>
-            <td style="color:cornflowerblue" align="center">Acquisition and Tracking</td>
-            <td style="color:cornflowerblue" align="center">Closed-loop experiments</td>
-            <td style="color:cornflowerblue" align="center">Operant behavior</td>
-            <td style="color:cornflowerblue" align="center">Vision experiments</td>
-            <td style="color:cornflowerblue" align="center">Final projects</td>
-        </tr>
-    </tbody>
-</table>
+<iframe src="https://calendar.google.com/calendar/embed?src=7pog16il4vf64e5e62ddgrrsv4%40group.calendar.google.com&ctz=Europe%2FLisbon" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 
 ### Day 1 - Introduction to Bonsai
 - Introduction to Bonsai. What is visual reactive programming?
