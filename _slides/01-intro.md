@@ -55,19 +55,9 @@ permalink: /slides/intro/
 
 ---
 
-### Some features of Bonsai
+#### What is Bonsai?
 
-* Visual programming language
-
-* A compiler, IDE, and standard library
-
-* Package manager for dependency management
-
-* Compiler and runtime backend in C#
-
-* All code JIT-compiled to machine code
-
-* Google group for community support
+![Bonsai](../../assets/images/bonsai-core.svg)
 
 ---
 
@@ -113,6 +103,14 @@ permalink: /slides/intro/
 <!-- .element: style="display: inline-block; vertical-align: middle;" -->
 ![Marble diagram](../../assets/images/graycam-marble.svg)
 <!-- .element: class="fragment" style="display: inline-block; vertical-align: middle;" -->
+
+--
+
+<!-- .element: data-transition="default none" -->
+![Workflow](../../assets/images/graycam.svg)
+<!-- .element: style="display: inline-block; vertical-align: middle;" -->
+![Marble diagram](../../assets/images/graycam-marble-effects.svg)
+<!-- .element: style="display: inline-block; vertical-align: middle;" -->
 
 --
 
