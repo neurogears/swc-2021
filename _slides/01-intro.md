@@ -187,6 +187,30 @@ permalink: /slides/intro/
 </script>
 </section>
 
+<!-- Raw HTML for embedded iframe backgrounds -->
+<section data-background="#000000">
+    <section data-background-iframe="https://www.youtube.com/embed/wwU6TzUJxNU?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=wwU6TzUJxNU&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>Gonçalo Lopes, Kampff Lab</th></tr>
+      </table>
+    </section>
+    <section data-background-iframe="https://www.youtube.com/embed/qXqAXgXJPmo?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>Lorenza Calcaterra, Kampff Lab</th></tr>
+      </table>
+    </section>
+    <section data-background-iframe="https://www.youtube.com/embed/hz_OnvH9sa0?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=hz_OnvH9sa0&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>Joana Neto et al., Kampff Lab</th></tr>
+      </table>
+    </section>
+    <section data-background-iframe="https://www.youtube.com/embed/mJDV07ptQFk?start=40&amp;controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>George Dimitriadis, Kampff Lab</th></tr>
+      </table>
+    </section>
+</section>
+
 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
 <script type="text/template">
 
@@ -230,29 +254,13 @@ permalink: /slides/intro/
   <p>Matthis et al.</p>
 </section>
 
-<!-- Raw HTML for embedded iframe backgrounds -->
-<!-- <section data-background="#000000">
-    <section data-background-iframe="https://www.youtube.com/embed/wwU6TzUJxNU?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=wwU6TzUJxNU&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>Gonçalo Lopes, Kampff Lab</th></tr>
-      </table>
-    </section>
-    <section data-background-iframe="https://www.youtube.com/embed/qXqAXgXJPmo?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>Lorenza Calcaterra, Kampff Lab</th></tr>
-      </table>
-    </section>
-    <section data-background-iframe="https://www.youtube.com/embed/hz_OnvH9sa0?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=hz_OnvH9sa0&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>Joana Neto et al., Kampff Lab</th></tr>
-      </table>
-    </section>
-    <section data-background-iframe="https://www.youtube.com/embed/mJDV07ptQFk?start=40&amp;controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>George Dimitriadis, Kampff Lab</th></tr>
-      </table>
-    </section>
-</section> -->
+<section>
+  <h4>Multi-animal tracking</h4>
+  <img src="../../assets/images/bonsai-bonzeb.svg" alt="BonZeb" />
+  <video data-autoplay src="https://github.com/ncguilbeault/BonZeb/raw/master/Videos/Supplemental%20video%206%20-%20Multi-animal%20tracking%20with%20OMR.mp4" height="300px"></video>
+  <a href="https://ncguilbeault.github.io/BonZeb/">ncguilbeault.github.io/BonZeb</a>
+  <p>Nicholas Guilbeault et al. </p>
+</section>
 
 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
 <script type="text/template">
