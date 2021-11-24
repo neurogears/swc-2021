@@ -24,121 +24,89 @@ permalink: /slides/intro/
 
 ---
 
-### Neuroscience needs makers & hackers
+### Outline
 
-On the nature of systems neuroscience tools:
-
-* Accessible
-<!-- .element: class="fragment" data-fragment-index="1" -->
-<!-- Accessible both in the sense that everyone can use... (so many walks of life in neuroscience) -->
-<!-- ... but also in the sense that they can be understood. (using a tool with understanding is transformative) -->
-* Forward-thinking
-<!-- .element: class="fragment" data-fragment-index="2" -->
-<!--  We want our tools to push the bar of what we can measure... (vastly underpowered tools) -->
-<!--  ... but equally importantly we want them to challenge and surprise us. (surprise is the basis of discovery) -->
-* Versatile
-<!-- .element: class="fragment" data-fragment-index="3" -->
-<!--  We need to combine tools in all sorts of ways... (crazy neuro experiments) -->
-<!--  ... but also be inclusive to modifications and new demands -->
-
----
-
-![Devices compatible with Bonsai](../../assets/images/devices.jpg)
-
----
-
-![Applications in Neuroscience](../../assets/images/bonsai-applications.svg)
-
-</script>
-</section>
-
-<!-- Raw HTML for embedded iframe backgrounds -->
-<section data-background="#000000">
-    <section data-background-iframe="https://www.youtube.com/embed/jKB0d9vsfgA?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;start=108&amp;playlist=jKB0d9vsfgA&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>.txt interactive digital performance</th></tr>
-      </table>
-    </section>
-    <section data-background-iframe="https://www.youtube.com/embed/4q9mFkZ3J_g?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=4q9mFkZ3J_g&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>Elena Dreosti, UCL</th></tr>
-      </table>
-    </section>
-    <section data-background-iframe="https://www.youtube.com/embed/wwU6TzUJxNU?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=wwU6TzUJxNU&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>Gonçalo Lopes, Kampff Lab</th></tr>
-      </table>
-    </section>
-    <section data-background-iframe="https://www.youtube.com/embed/qXqAXgXJPmo?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>Lorenza Calcaterra, Kampff Lab</th></tr>
-      </table>
-    </section>
-    <section data-background-iframe="https://www.youtube.com/embed/mJDV07ptQFk?start=40&amp;controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
-      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
-        <tr><th>George Dimitriadis, Kampff Lab</th></tr>
-      </table>
-    </section>
-</section>
-
-<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-<script type="text/template">
-
-![Bonsai Ecosystem](../../assets/images/bonsai-packages.svg)
-
-</script>
-</section>
-
-<!-- Raw HTML for embedded iframe backgrounds -->
-<section>
-  <section>
-    <h4>Real-time markerless pose estimation</h4>
-    <img src="../../assets/images/bonsai-dlc.svg" alt="Bonsai-DeepLabCut" />
-    <iframe src="https://www.youtube.com/embed/0aachcS0CUY?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=0aachcS0CUY&amp;showinfo=0&amp;rel=0&amp;html5=1" width="500px" height="300px"></iframe>
-    <a href="https://github.com/bonsai-rx/deeplabcut/">github.com/bonsai-rx/deeplabcut</a>
-  </section>
-  <section>
-    <h4>Interactive visual environments</h4>
-    <img src="../../assets/images/bonsai-bonvision.svg" alt="BonVision" />
-    <img src="https://bonvision.github.io/assets/Images/Demos/DemoAR_v3.gif" width="50%" alt="Augmented Reality in BonVision" />
-    <a href="https://bonvision.github.io/">bonvision.github.io</a>
-  </section>
-  <section>
-    <h4>Multi-animal tracking</h4>
-    <img src="../../assets/images/bonsai-bonzeb.svg" alt="BonZeb" />
-    <video data-autoplay src="https://github.com/ncguilbeault/BonZeb/raw/master/Videos/Supplemental%20Video%203%20-%20Multi%20Animal%20OMR.mp4"></video>
-    <a href="https://ncguilbeault.github.io/BonZeb/">ncguilbeault.github.io/BonZeb</a>
-  </section>
-</section>
-
-<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-<script type="text/template">
-
-![Bonsai workflow editor](../../assets/images/editor.jpg)
+* What is Bonsai?
+* Hardware & Software Ecosystem
+  * Harp
+  * Open-Ephys
+  * Fiber photometry, etc
+  * DeepLabCut
+  * ...
 
 ---
 
 <!-- .element: data-transition="default none" -->
-#### A metaphor for observable sequences
-
-<img alt="Nasa twitter account" src="../../assets/images/nasatwitter.jpg" width="400"/>
+#### What kind of algebra?
+![Reactive Programming](../../assets/images/bonsai-algebra-1.svg)
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
 
 <!-- .element: data-transition="none" -->
-#### A metaphor for observable sequences
+#### What kind of algebra?
+![Reactive Programming](../../assets/images/bonsai-algebra-2.svg)
 
-<img alt="Webcam twitter account" src="../../assets/images/webcamtwitter.jpg" width="400"/>
+--
+
+<!-- .element: data-transition="none" -->
+#### What kind of algebra?
+![Reactive Programming](../../assets/images/bonsai-algebra.svg)
+
+---
+
+### Some features of Bonsai
+
+* Visual programming language
+
+* A compiler, IDE, and standard library
+
+* Package manager for dependency management
+
+* Compiler and runtime backend in C#
+
+* All code JIT-compiled to machine code
+
+* Google group for community support
 
 ---
 
 <!-- .element: data-transition="default none" -->
-![Workflow](../../assets/images/cameracapture.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-![Marble diagram](../../assets/images/framepicker-marblecanvas.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
+### Why do we need a new algebra?
+![Behavior Experiments](../../assets/images/behavior-experiments-5c.svg)
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 --
+
+<!-- .element: data-transition="none" -->
+### Why do we need a new algebra?
+![Behavior Experiments](../../assets/images/behavior-experiments-5.svg)
+
+--
+
+<!-- .element: data-transition="none" -->
+### Why do we need a new algebra?
+![Behavior Experiments](../../assets/images/behavior-experiments-1.svg)
+
+--
+
+<!-- .element: data-transition="none" -->
+### Why do we need a new algebra?
+![Behavior Experiments](../../assets/images/behavior-experiments-2.svg)
+
+--
+
+<!-- .element: data-transition="none" -->
+### Why do we need a new algebra?
+![Behavior Experiments](../../assets/images/behavior-experiments-3.svg)
+
+--
+
+<!-- .element: data-transition="none" -->
+### Why do we need a new algebra?
+![Behavior Experiments](../../assets/images/behavior-experiments-4.svg)
+
+---
 
 <!-- .element: data-transition="default none" -->
 ![Workflow](../../assets/images/graycam.svg)
@@ -149,33 +117,17 @@ On the nature of systems neuroscience tools:
 --
 
 <!-- .element: data-transition="default none" -->
-![Workflow](../../assets/images/framepicker-key.svg)
+![Workflow](../../assets/images/graycam.svg)
 <!-- .element: style="display: inline-block; vertical-align: middle;" -->
-![Marble diagram](../../assets/images/framepicker-marblecanvas.svg)
+![Marble diagram](../../assets/images/grayscaletransform.svg)
 <!-- .element: style="display: inline-block; vertical-align: middle;" -->
 
 --
 
 <!-- .element: data-transition="default none" -->
-![Workflow](../../assets/images/framepicker-capture.svg)
+![Workflow](../../assets/images/framepicker-key.svg)
 <!-- .element: style="display: inline-block; vertical-align: middle;" -->
-![Marble diagram](../../assets/images/cameracapture-marble.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-
---
-
-<!-- .element: data-transition="none" -->
-![Workflow](../../assets/images/framepicker-grayscale.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-![Marble diagram](../../assets/images/grayscalefile.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-
---
-
-<!-- .element: data-transition="none" -->
-![Workflow](../../assets/images/framepicker-grayscale.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-![Marble diagram](../../assets/images/grayscaletransform.svg)
+![Marble diagram](../../assets/images/framepicker-marblecanvas.svg)
 <!-- .element: style="display: inline-block; vertical-align: middle;" -->
 
 --
@@ -202,100 +154,107 @@ On the nature of systems neuroscience tools:
 ![Marble diagram](../../assets/images/saveimagesink.svg)
 <!-- .element: style="display: inline-block; vertical-align: middle;" -->
 
---
-
-<!-- .element: data-transition="none" -->
-![Workflow](../../assets/images/framepicker-key.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-![Marble diagram](../../assets/images/framepicker-marblecanvas.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-
---
-
-<!-- .element: data-transition="none" -->
-![Workflow](../../assets/images/framepicker.svg)
-<!-- .element: style="display: inline-block; vertical-align: middle;" -->
-![Marble diagram](../../assets/images/conditionkey.svg)
-<!-- .element: class="fragment" style="display: inline-block; vertical-align: middle;" -->
-
 ---
 
 <!-- .element: data-transition="default none" -->
-##### Operator Categories
-
-![Operator categories](../../assets/images/categories-simple.svg)
-<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
+### Representing discrete states
+![SelectMany](../../assets/images/selectmany-events-hidden.svg)
 
 --
 
-<!-- .element: data-transition="none" -->
-##### Operator Categories
+<!-- .element: data-transition="none none" -->
+### Representing discrete states
+![SelectMany](../../assets/images/selectmany-events-in.svg)
 
-![Operator categories](../../assets/images/categories.svg)
-<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
+--
 
----
+<!-- .element: data-transition="none none" -->
+### Representing discrete states
+![SelectMany](../../assets/images/selectmany-states.svg)
 
-###### Skip
+--
 
-![Skip](../../assets/images/skip.svg)
-
----
-
-###### Take
-
-![Take](../../assets/images/take.svg)
+<!-- .element: data-transition="none default" -->
+### Representing discrete states
+![SelectMany](../../assets/images/selectmany-events-out.svg)
 
 ---
 
-###### SkipUntil
-
-![SkipUntil](../../assets/images/skipuntil.svg)
+![Bonsai workflow editor](../../assets/images/editor.jpg)
 
 ---
 
-###### TakeUntil
-
-![TakeUntil](../../assets/images/takeuntil.svg)
-
----
-
-###### Delay
-
-![Delay](../../assets/images/delay.svg)
-
----
-
-###### DelaySubscription / SubscribeWhen
-
-![DelaySubscription](../../assets/images/delaysubscription.svg)
-
----
-
-###### Repeat
-
-![Delay](../../assets/images/repeat.svg)
-
----
-
-###### Zip
-
-![Zip](../../assets/images/zip.svg)
-
----
-
-###### CombineLatest
-
-![CombineLatest](../../assets/images/combinelatest.svg)
-
----
-
-###### WithLatestFrom
-
-![WithLatestFrom](../../assets/images/withlatestfrom.svg)
+![Bonsai Ecosystem](../../assets/images/bonsai-packages.svg)
 
 </script>
 </section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+<script type="text/template">
+
+#### Hardware synchronized acquisition & control
+![Harp-Bonsai](../../assets/images/bonsai-harp.svg)
+
+[cf-hw.org/harp](https://www.cf-hw.org/harp)
+
+</script>
+</section>
+
+<section>
+  <h4>Next generation open ephys</h4>
+  <img src="../../assets/images/nextgen-ephys.png" alt="ONI - Open Neuro Interface" width="500px" />
+  <iframe src="https://www.youtube.com/embed/8xC404aTSUo?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=8xC404aTSUo&amp;showinfo=0&amp;rel=0&amp;html5=1" width="400px" height="300px"></iframe>
+  <a href="https://open-ephys.org/next-gen-acquisition-system">open-ephys.org/next-gen-acquisition-system</a>
+  <p>Jon Newman et al. @ Open-Ephys</p>
+</section>
+
+<section>
+  <h4>Multi-fiber photometry recordings</h4>
+  <img src="../../assets/images/bonsai-npm.svg" alt="Neurophotometrics" />
+  <img src="https://github.com/neurophotometrics/neurophotometrics/wiki/images/calibrate-regions.gif" width="50%" alt="Neurophotometrics" />
+  <a href="https://neurophotometrics.com/">neurophotometrics.com</a>
+</section>
+
+<section>
+  <h4>Interactive visual environments</h4>
+  <img src="../../assets/images/bonsai-bonvision.svg" alt="BonVision" />
+  <img src="https://bonvision.github.io/assets/Images/Demos/DemoAR_v3.gif" width="50%" alt="Augmented Reality in BonVision" />
+  <a href="https://bonvision.github.io/">bonvision.github.io</a>
+  <p>Saleem Lab and Solomon Lab</p>
+</section>
+
+<!-- Raw HTML for embedded iframe backgrounds -->
+<section>
+  <h4>Real-time markerless pose estimation</h4>
+  <img src="../../assets/images/bonsai-dlc.svg" alt="Bonsai-DeepLabCut" />
+  <iframe src="https://www.youtube.com/embed/0aachcS0CUY?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=0aachcS0CUY&amp;showinfo=0&amp;rel=0&amp;html5=1" width="500px" height="300px"></iframe>
+  <a href="https://github.com/bonsai-rx/deeplabcut/">github.com/bonsai-rx/deeplabcut</a>
+  <p>Matthis et al.</p>
+</section>
+
+<!-- Raw HTML for embedded iframe backgrounds -->
+<!-- <section data-background="#000000">
+    <section data-background-iframe="https://www.youtube.com/embed/wwU6TzUJxNU?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=wwU6TzUJxNU&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>Gonçalo Lopes, Kampff Lab</th></tr>
+      </table>
+    </section>
+    <section data-background-iframe="https://www.youtube.com/embed/qXqAXgXJPmo?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>Lorenza Calcaterra, Kampff Lab</th></tr>
+      </table>
+    </section>
+    <section data-background-iframe="https://www.youtube.com/embed/hz_OnvH9sa0?controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;loop=1&amp;playlist=hz_OnvH9sa0&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>Joana Neto et al., Kampff Lab</th></tr>
+      </table>
+    </section>
+    <section data-background-iframe="https://www.youtube.com/embed/mJDV07ptQFk?start=40&amp;controls=0&amp;enablejsapi=1&amp;autoplay=1&amp;showinfo=0&amp;rel=0&amp;html5=1">
+      <table style="height: 20%; margin-top: 65%; margin-left: -78px;">
+        <tr><th>George Dimitriadis, Kampff Lab</th></tr>
+      </table>
+    </section>
+</section> -->
 
 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
 <script type="text/template">
