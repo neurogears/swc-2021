@@ -106,7 +106,7 @@ On the nature of systems neuroscience tools:
   <section>
     <h4>Multi-animal tracking</h4>
     <img src="../../assets/images/bonsai-bonzeb.svg" alt="BonZeb" />
-    <video data-autoplay src="https://github.com/ncguilbeault/BonZeb/raw/master/Videos/Supplemental%20Video%203%20-%20Multi%20Animal%20OMR.mp4"></video>
+    <video data-autoplay src="https://github.com/ncguilbeault/BonZeb/raw/master/Videos/Supplemental%20video%206%20-%20Multi-animal%20tracking%20with%20OMR.mp4"></video>
     <a href="https://ncguilbeault.github.io/BonZeb/">ncguilbeault.github.io/BonZeb</a>
   </section>
 </section>
