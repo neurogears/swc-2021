@@ -14,6 +14,22 @@ permalink: /slides/higher-order/
 
 ---
 
+<!-- .element: data-transition="default none" -->
+##### Operator Categories
+
+![Operator categories](../../assets/images/categories-simple.svg)
+<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
+
+--
+
+<!-- .element: data-transition="none" -->
+##### Operator Categories
+
+![Operator categories](../../assets/images/categories.svg)
+<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
+
+---
+
 ###### Delay
 
 ![Delay](../../assets/images/delay.svg)

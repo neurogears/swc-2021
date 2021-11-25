@@ -24,6 +24,14 @@ permalink: /slides/reactive/
 
 ---
 
+### Outline
+
+* Recap
+* Bonsai + DLC
+* Reactive Combinators
+
+---
+
 <!-- .element: data-transition="default none" -->
 #### A metaphor for observable sequences
 
@@ -132,13 +140,15 @@ permalink: /slides/reactive/
 ![Operator categories](../../assets/images/categories-simple.svg)
 <!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
 
---
+---
 
-<!-- .element: data-transition="none" -->
-##### Operator Categories
+![DLC Pipeline](../../assets/images/bonsai-dlc-pipeline.png)
 
-![Operator categories](../../assets/images/categories.svg)
-<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
+---
+
+#### Bonsai + DeepLabcut Workflow
+
+![Bonsai + DLC Workflow](../../assets/images/bonsai-dlc-workflow.svg)
 
 ---
 
