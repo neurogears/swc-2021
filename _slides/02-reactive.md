@@ -210,6 +210,89 @@ permalink: /slides/reactive/
 
 ![WithLatestFrom](../../assets/images/withlatestfrom.svg)
 
+---
+
+<!-- .element: data-transition="default none" -->
+###### Transform
+
+![Transform](../../assets/images/transform.svg)
+
+--
+
+<!-- .element: data-transition="default none" -->
+###### Select
+
+![Select](../../assets/images/select.svg)
+
+--
+
+<!-- .element: data-transition="none default" -->
+###### SelectMany
+
+![SelectMany](../../assets/images/selectmany.svg)
+
+--
+
+<!-- .element: data-transition="none default" -->
+###### SelectMany: Play audio on cue
+
+![SelectMany](../../assets/images/selectmany-playsound-1.svg)
+
+--
+
+<!-- .element: data-transition="none default" -->
+###### SelectMany: Play audio on cue
+
+![SelectMany](../../assets/images/selectmany-playsound-2.svg)
+
+---
+
+<!-- .element: data-transition="default none" -->
+###### Buffer
+
+![Buffer](../../assets/images/buffer.svg)
+
+--
+
+<!-- .element: data-transition="none default" -->
+###### Buffer: Moving Average
+
+![SelectMany](../../assets/images/buffer-movingaverage.svg)
+
+---
+
+<!-- .element: data-transition="default none" -->
+###### TriggeredBuffer
+
+![TriggeredBuffer](../../assets/images/triggeredbuffer.svg)
+
+--
+
+<!-- .element: data-transition="none default" -->
+###### TriggeredBuffer: Signal Snapshot
+
+![SelectMany](../../assets/images/triggeredbuffer-snapshot.svg)
+
+---
+
+###### Window
+
+![Window](../../assets/images/window.svg)
+
+---
+
+<!-- .element: data-transition="default none" -->
+###### TriggeredWindow
+
+![TriggeredWindow](../../assets/images/triggeredwindow.svg)
+
+--
+
+<!-- .element: data-transition="none default" -->
+###### TriggeredWindow: Record triggered video
+
+![SelectMany](../../assets/images/triggeredwindow-recordclip.svg)
+
 </script>
 </section>
 
