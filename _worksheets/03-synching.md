@@ -4,80 +4,122 @@ title: Data Synchronization
 permalink: /worksheets/synching/
 ---
 
-Synchronizing behaviour and other experimental events with recorded neural data is a fundamental component of neuroscience data collection and analysis. The exercises below will walk you through some common cases encountered in systems neuroscience experiments, and how to deal with them using Bonsai.
+Synchronizing behaviour and other experimental events with stimulation or recorded neural data is a fundamental component of neuroscience data collection and analysis. The exercises below will walk you through some common synchronization problems encountered in systems neuroscience experiments, and how to handle them using Bonsai.
 
-The general approach when synchronizing two independent data acquisition clocks is to record precise temporal events simultaneously in both systems. If you know that the two recorded events are the same, you know that those two time points are the same. When using multiple systems, it is common to choose the system with the fastest clock as *master*, and route all events to its analog or digital inputs.
+### **Exercise 1:** Synchronizing video from two webcams
 
-### **Exercise 1:** Synchronizing behaviour events with ephys
+![Synching Video]({{ site.baseurl }}/assets/images/synching-webcam.svg)
 
-* Insert a `KeyDown` source.
-* Insert an `Equal` transform and set its `Value` to one of the keys. The output of this operator will toggle between `True` and `False` depending on whether the key press matches the specified key.
-* Insert a `DigitalOutput` sink and connect it to Arduino pin 13.
-* Connect the Arduino pin 13 to OpenEphys analog input 1.
-* Insert an `Rhd2000EvalBoard` source.
-* Select the `Rhd2000DataFrame` > `BoardAdcData` field from the source output using the context menu.
-* Insert a `SelectChannels` transform and set the `Channels` property to 0. This will select only the first analog input channel.
-* Insert a `MatrixWriter` sink and configure its `Path` property with a file name ending in `.bin`.
-* Run the workflow and alternate pressing the selected key and some other key. Repeat this a couple of times to make the LED change state.
-* Open the binary file in MATLAB/Python/R and plot the raw data. What can you conclude from it?
+* Insert a `CameraCapture` source and set it to index 0.
+* Insert another `CameraCapture` source and set it to index 1.
+* Combine both sources using a `WithLatestFrom` combinator.
+* Insert a `Concat (Dsp)` operator and set its `Axis` property to 1.
+* Insert a `VideoWriter` sink and record a small segment of video.
 
-### **Exercise 2:** Synchronizing video with ephys using an LED
+*How would you test the synchronization between the two video streams?*
 
-* Using the workflow from the previous exercise, insert a `CameraCapture` source and point the camera such that you can see clearly both the LED and the computer keyboard.
+**Note**: You can use the `FileCapture` source to inspect the video frame by frame by setting the `Playing` property to `False`. After setting the `FileName` property to match your recorded video, run the workflow, open the source visualizer, and then right-clicking on top of the video frame to open up the seek bar at the bottom. You can use the arrow keys to move forward and back on individual frames.
+{: .notice--info}
+
+Reaction Time
+-------------
+
+For this and subsequent worksheets, we will use a simple reaction time task as our model systems neuroscience experiment. In this task, the subject needs to press a button as fast as possible following a stimulus, as described in the following diagram:
+
+<span style="display:block;text-align:center">
+![State Machine Diagram]({{ site.baseurl }}/assets/images/reactiontime.svg)
+</span>
+
+The task begins with an inter-trial interval (`ITI`), followed by stimulus presentation (`ON`). After stimulus onset, advancement to the next state can happen only when the subject presses the button (`success`) or a timeout elapses (`miss`). Depending on which event is triggered first, the task advances either to the `Reward` state, or `Fail` state. At the end, the task goes back to the beginning of the ITI state for the next trial.
+
+### **Exercise 2:** Generating a fixed-interval stimulus
+
+In this first exercise, you will assemble the basic hardware and software components required to implement the reaction time task. The wiring diagram below illustrates the hardware assembly. You can wire the LED into any digital input pin, but make sure to note the pin number for the steps below.
+
+![Reaction Time Circuit]({{ site.baseurl }}/assets/images/reaction-time-circuit.png){:height="300px"}
+
+We will start by using a fixed-interval blinking LED as our stimulus.
+
+![Create Arduino]({{ site.baseurl }}/assets/images/create-arduino.svg)
+
+* To configure the Arduino analog sampling rate, insert a `CreateArduino` source.
+* Configure the `PortName` to the Arduino port where the microcontroller is connected.
+* Configure the `SamplingInterval` property to 10 ms.
+
+![Reaction Time Stimulus]({{ site.baseurl }}/assets/images/reaction-time-stimulus.svg)
+
+* Insert a `Timer` source and set its `DueTime` property to 1 second.
+* Insert a `Boolean` source and set its `Value` property to `True`.
+* Insert a `DigitalOutput` sink and set its `Pin` property to the Arduino pin where the LED is connected.
+* Configure the `PortName` to the Arduino port where the microcontroller is connected.
+* Insert a `Delay` operator and set its `DueTime` property to 200 milliseconds.
+* Insert a `Boolean` source and set its `Value` property to `False`.
+* Insert a `DigitalOutput` sink configured to the same `Pin` and `PortName`.
+* Insert a `Repeat` operator.
+
+### **Exercise 3:** Measuring reaction time
+
+![Reaction Time Measurement]({{ site.baseurl }}/assets/images/reaction-time-measurement.svg)
+
+* Insert an `AnalogInput` source.
+* Set the `Pin` property to the analog pin number where the duplicate LED wire is connected.
+* Insert a second `AnalogInput` source.
+* Set the `Pin` property to the analog pin number where the button is connected.
+* Connect both inputs to a `Zip` operator.
+* Insert a `CsvWriter` sink and configure the `FileName` property.
+* Insert a `RollingGraph` visualizer and set its `Capacity` property to 1000.
+* Run the workflow, and verify that both the stimulus and the button are correctly recorded.
+
+### **Exercise 4:** Synchronizing video with a visual stimulus
+
+To analyze movement dynamics in the reaction time task, you will need to align individual frame timing to stimulus onset. To do this, you can take advantage of the fact that our simple visual stimulus can be seen in the camera image and recorded together with the behaviour.
+
+![Synching LED]({{ site.baseurl }}/assets/images/synching-led.svg)
+
+* Starting from the workflow in the previous exercise, insert a `CameraCapture` source and position the camera such that you can see clearly both the LED and the computer keyboard.
 * Insert a `VideoWriter` sink and configure the `FileName` with a path ending in `.avi`.
 * Insert a `Crop` transform and set the `RegionOfInterest` property to a small area around the LED.
 * Insert a `Grayscale` transform.
 * Insert a `Sum (Dsp)` transform. This operator will sum the brightness values of all the pixels in the input image.
 * Select the `Scalar` > `Val0` field from the right-click context menu.
 * Record the output in a text file using a `CsvWriter` sink.
-* Open both the text file and the binary file in MATLAB/Python/R and check that you have detected an equal number of key presses in both files. What can you conclude from these two pieces of data?
-* **Optional:** Repeat the exercise, replacing the `KeyDown` source with a periodic `Timer`. Can you point out some of the limitations of synchronizing a video stream with ephys using this method?
+* Open both the text file containing the Arduino data, and the text file containing video data, and verify that you have detected an equal number of stimulus in both files. What can you conclude from these two pieces of data?
+* **Optional:** Open the raw video file and find the exact frame where the stimulus came on. If you compare different trials you might notice that the brightness of the LED in that first frame across two different trials is different. Why is that?
 
-### **Exercise 3 (Optional):** Synchronizing video with ephys using GPIO
+### **Exercise 5:** Trigger a visual stimulus using a button
 
-Industrial grade cameras often include a GPIO connector which exposes input and output digital pins that operate similar to the pins in an Arduino or other microcontrollers. It is possible to configure these pins to report when the shutter of the camera is open or closed (i.e., when a frame is being exposed, the shutter is open and the pin goes `HIGH`, and conversely, when exposure stops, the shutter closes and the pin goes `LOW`).
+To make our task more interesting, we will now trigger the stimulus manually using a button press and learn more about `SelectMany` along the way!
 
-By connecting this strobe signal to the ephys system and counting the number of pulses, it is possible to reconstruct with sub-millisecond precision how many exposures were acquired by the camera, and when each of them started. One problem to consider during high-speed recordings, however, is that frames may occasionally be dropped if the system cannot handle each acquired frame fast enough. One way to work around this issue is to record the hardware frame counter which can be enabled in the drivers of all industrial grade cameras.
+![Triggered Stimulus Outer]({{ site.baseurl }}/assets/images/triggered-stimulus-outer.svg)
 
-* Connect one of the output GPIO camera pins to the OpenEphys analog input 1.
-* Configure the camera output as *strobe*.
-* Insert a `FlyCapture` source or other industrial grade camera capture source.
-* Record the embedded hardware frame counter into a text file using `CsvWriter`.
-* Record the OpenEphys analog input and verify that you can recover individual camera pulses.
-* Point out some of the remaining difficulties of this approach and how you would adress them.
+* Connect a new push button component into one of the Arduino digital inputs.
+* Insert a `DigitalInput` source and set its `Pin` property to the Arduino pin where the new button is connected.
+* Configure the `PortName` to the Arduino port where the microcontroller is connected.
+* Insert a `Condition` operator.
+* Insert a `SelectMany` operator and move the stimulus generation logic inside the nested node:
 
-### **Exercise 4:** Synchronizing a visual stimulus with ephys
+![Triggered Stimulus Inner]({{ site.baseurl }}/assets/images/triggered-stimulus-inner.svg)
 
-Displaying visual patterns on a screen or projector can be subject to significant delays that may impact synchronization with neural signals. Unfortunately, most displays do not directly provide any kind of digital output that might be used to synchronize stimulus presentation with ephys.
+*Why do we need to remove the `Repeat` operator?*
 
-However, you can take advantage of the fact that all pixels in a frame are presented synchronously and reserve part of the display area to show a synchronization trigger. A passive photodiode can then be used to transduce this optical trigger into a digital signal that can be transmitted to the ephys auxiliary input channels.
+* Ask a friend to test your reaction time!
+* **Optional:** In the current workflow, what happens if you press the stimulus button twice in succession? Can you fix the current behaviour by using one of the higher order operators?
 
-In this exercise you will track the display of a very simple visual stimulus: a transition between black and white.
+### **Exercise 6:** Recording response-triggered videos
 
-* Insert a `SolidColor` source and set its `Size` property to a positive value, e.g. 100,100.
-* Insert a `Timer` source and set the `Period` to one second.
-* Insert a `Mod` transform and set its `Value` property to 2.
-* Insert a `Multiply` transform and set its `Value` property to 255.
+![Triggered Video Outer]({{ site.baseurl }}/assets/images/triggered-video-outer.svg)
 
-**Note:** The output of `Timer` is a growing count of the number of ticks. The `Mod` operator computes the remainder of the integer division of a number by another. Because every integer number in the sequence is alternately even or odd, the remainder of the division of the clock ticks by two will constantly oscillate between 0 and 1. Together with the `Multiply` operator, this is an easy way to make a periodic toggle between 0 and some value.
-{: .notice--info}
+* Starting from the previous workflow, insert another `AnalogInput` source with the `Pin` property set to the button press pin number.
+* Insert a `GreaterThan` operator.
+* Insert a `DistinctUntilChanged` operator.
+* Insert a `Condition` operator.
+* In a new branch coming off the `VideoWriter`, insert a `Delay` operator.
+* Set the `DueTime` property of the `Delay` operator to 1 second.
+* Insert a `TriggeredWindow` operator, and set its `Count` property to 100.
+* Insert a `SelectMany` operator and inside the nested node create the below workflow:
 
-* Insert an `InputMapping` operator and connect it to the `SolidColor` source.
-* Edit the `PropertyMappings` and add a mapping to the `Color` property. You will have to select four times the input to fill all the components of the `Color` scalar.
-* Run the workflow and verify that the output of `SolidColor` oscillates between black and white.
-* Insert an `Rhd2000EvalBoard` source.
-* Select the `Rhd2000DataFrame` > `BoardAdcData` and either save or visualize its output.
-* Connect a photodiode, or a photoresistor, to the ephys analog input and hold it flat against the screen, on top of the visualizer window.
-* Verify that you can capture the transitions between black and white in the ephys data using the photodiode.
+![Triggered Video Inner]({{ site.baseurl }}/assets/images/triggered-video-inner.svg)
 
-### **Exercise 5 (Optional):** Synchronizing video acquisition to a visual stimulus using GPIO
-
-The easiest way to synchronize the video acquisition with a visual stimulus is to make sure that your camera can see and track both your object of interest *and* the visual stimulus. If you can extract the stimulus events from your video, then they are synchronized with all other video events by definition, since all pixels in a video frame are acquired synchronously.
-
-However, sometimes this is not feasible: the stimulus may be covered by the subject, it may not be possible to recover the exact stimulus parameters from the camera view, or the stimulus may need to be filtered out entirely in order to allow for accurate tracking. In these situations, one solution for industrial grade cameras is to operate the camera in trigger mode, where the input GPIO channels can be used to align the beginning of each frame acquisition to the refresh rate of the display.
-
-To do this, you can use the photodiode technique described in the previous exercise, but this time the digital signal from the photodiode will be used as a trigger for the camera by connecting it to one of the GPIO inputs.
-
-* Assuming a DLP projector, how would you design the optical trigger for a camera system that ensures a single pulse is generated for each projected frame (hint: In a DLP projector, each colour of a BGR frame is projected sequentially: first the Blue channel, then the Green, and finally the Red channel, in quick succession)?
-* **Optional:** Synchronize a camera with a projector using the GPIO trigger system outlined above.
-
+* Run the workflow and record a few videos triggered on the button press.
+* Inspect the videos frame by frame and check whether the response LED comes ON at exactly the same frame number across different trials.
+* If it does not, why would this happen? And how would you fix it?

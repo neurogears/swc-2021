@@ -21,10 +21,13 @@
 \begin{tikzpicture}
   \node[state] (iti) {ITI};
   \node[state, right of=iti] (stim) {ON};
-  \node[state, right of=stim] (resp) {OFF};
+  \node[state, right of=stim] (succ) {Reward};
+  \node[state, below right of=stim] (fail) {Fail};
   \draw (iti) edge node {\tt elapsed} (stim);
-  \draw (stim) edge node[sloped] {\tt response} (resp);
-  \draw (resp) edge[bend right=45] (iti);
+  \draw (stim) edge node[sloped] {\tt success} (succ);
+  \draw (stim) edge node[sloped] {\tt miss} (fail);
+  \draw (succ) edge[bend right=45] (iti);
+  \draw (fail) edge[bend left] (iti);
 \end{tikzpicture}
 
 \end{document}

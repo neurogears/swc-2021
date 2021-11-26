@@ -9,7 +9,7 @@ When designing operant behaviour assays in systems neuroscience, it is useful to
 For example, a simple reaction time task where the subject needs to press a button as fast as possible following a stimulus is described in the following diagram:
 
 <span style="display:block;text-align:center">
-![State Machine Diagram](../../assets/images/reactiontime.svg)
+![State Machine Diagram]({{ site.baseurl }}/assets/images/reactiontime-task.svg)
 </span>
 
 The task begins with an inter-trial interval (`ITI`), followed by stimulus presentation (`ON`). After stimulus onset, advancement to the next state can happen only when the subject presses the button (`success`) or a timeout elapses (`miss`). Depending on which event is triggered first, the task advances either to the `Reward` state, or `Fail` state. At the end, the task goes back to the beginning of the ITI state for the next trial.
