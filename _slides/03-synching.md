@@ -156,12 +156,20 @@ Mesh of multi-purpose asynchronous devices
 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
 <script type="text/template">
 
-### Questions / Brainstorm
-
 ![Bonsai](../../assets/images/bonsai-lettering.svg)
 
-Join us in the forums:
-https://groups.google.com/d/forum/bonsai-users
+### Questions?
+[neurogears.org/swc-2021](https://neurogears.org/swc-2021)
+<table style="width: 100%;">
+  <tr>
+    <th style="vertical-align: middle; width: 50%; height: 100px; padding-left: 100px">
+      <img alt="NeuroGEARS" src="../../assets/images/neurogears.svg"/>
+    </th>
+    <th style="vertical-align: middle; width: 50%; height: 100px; align: right">
+      <img alt="SWC" src="../../assets/images/swc.png"/>
+    </th>
+  </tr>
+</table>
 
 </script>
 </section>

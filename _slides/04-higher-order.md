@@ -10,68 +10,25 @@ permalink: /slides/higher-order/
 ![Bonsai](../../assets/images/bonsai-lettering.svg)
 
 ### Higher Order Operators
-[bonsai-rx.org](http://bonsai-rx.org)
+[neurogears.org/swc-2021](https://neurogears.org/swc-2021)
+<table style="width: 100%;">
+  <tr>
+    <th style="vertical-align: middle; width: 50%; height: 100px; padding-left: 100px">
+      <img alt="NeuroGEARS" src="../../assets/images/neurogears.svg"/>
+    </th>
+    <th style="vertical-align: middle; width: 50%; height: 100px; align: right">
+      <img alt="SWC" src="../../assets/images/swc.png"/>
+    </th>
+  </tr>
+</table>
 
 ---
 
-<!-- .element: data-transition="default none" -->
-##### Operator Categories
+### Outline
 
-![Operator categories](../../assets/images/categories-simple.svg)
-<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
-
---
-
-<!-- .element: data-transition="none" -->
-##### Operator Categories
-
-![Operator categories](../../assets/images/categories.svg)
-<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
-
----
-
-###### Delay
-
-![Delay](../../assets/images/delay.svg)
-
----
-
-###### DelaySubscription / SubscribeWhen
-
-![DelaySubscription](../../assets/images/delaysubscription.svg)
-
----
-
-###### Repeat
-
-![Delay](../../assets/images/repeat.svg)
-
----
-
-### Sharing observable sequences
-
-![Branching](../../assets/images/branching-simple.svg)
-<!-- .element: style="display: inline-block; vertical-align: top;" -->
-![Subjects (Publish)](../../assets/images/subjects-publish-simple.svg)
-<!-- .element: class="fragment" style="display: inline-block; vertical-align: top; padding-left: 120px;" -->
-
---
-
-### Sharing observable sequences
-
-![Publish](../../assets/images/publish.svg)
-<!-- .element: style="display: inline-block; vertical-align: top;" -->
-![Replay](../../assets/images/replay.svg)
-<!-- .element: class="fragment" style="display: inline-block; vertical-align: top; padding-left: 40px;" -->
-
---
-
-### Sharing observable sequences
-
-![Subjects (Publish)](../../assets/images/subjects-publish.svg)
-<!-- .element: style="display: inline-block; vertical-align: top; padding-left: 120px;" -->
-![Subjects (Replay)](../../assets/images/subjects-replay.svg)
-<!-- .element: class="fragment" style="display: inline-block; vertical-align: top; padding-left: 120px;" -->
+* Recap
+* Sharing Sequences
+* Higher Order Operators
 
 ---
 
@@ -110,34 +67,6 @@ permalink: /slides/higher-order/
 
 ---
 
-<!-- .element: data-transition="default none" -->
-###### Buffer
-
-![Buffer](../../assets/images/buffer.svg)
-
---
-
-<!-- .element: data-transition="none default" -->
-###### Buffer: Moving Average
-
-![SelectMany](../../assets/images/buffer-movingaverage.svg)
-
----
-
-<!-- .element: data-transition="default none" -->
-###### TriggeredBuffer
-
-![TriggeredBuffer](../../assets/images/triggeredbuffer.svg)
-
---
-
-<!-- .element: data-transition="none default" -->
-###### TriggeredBuffer: Signal Snapshot
-
-![SelectMany](../../assets/images/triggeredbuffer-snapshot.svg)
-
----
-
 ###### Window
 
 ![Window](../../assets/images/window.svg)
@@ -155,6 +84,67 @@ permalink: /slides/higher-order/
 ###### TriggeredWindow: Record triggered video
 
 ![SelectMany](../../assets/images/triggeredwindow-recordclip.svg)
+
+---
+
+###### Amb
+
+![Amb](../../assets/images/amb.svg)
+
+---
+
+###### Merge
+
+![Merge](../../assets/images/merge.svg)
+
+---
+
+###### Concat
+
+![Concat](../../assets/images/concat.svg)
+
+---
+
+### Sharing observable sequences
+
+![Branching](../../assets/images/branching-simple.svg)
+<!-- .element: style="display: inline-block; vertical-align: top;" -->
+![Subjects (Publish)](../../assets/images/subjects-publish-simple.svg)
+<!-- .element: class="fragment" style="display: inline-block; vertical-align: top; padding-left: 120px;" -->
+
+--
+
+### Sharing observable sequences
+
+![Publish](../../assets/images/publish.svg)
+<!-- .element: style="display: inline-block; vertical-align: top;" -->
+![Replay](../../assets/images/replay.svg)
+<!-- .element: class="fragment" style="display: inline-block; vertical-align: top; padding-left: 40px;" -->
+
+--
+
+### Sharing observable sequences
+
+![Subjects (Publish)](../../assets/images/subjects-publish.svg)
+<!-- .element: style="display: inline-block; vertical-align: top; padding-left: 120px;" -->
+![Subjects (Replay)](../../assets/images/subjects-replay.svg)
+<!-- .element: class="fragment" style="display: inline-block; vertical-align: top; padding-left: 120px;" -->
+
+---
+
+<!-- .element: data-transition="default none" -->
+### Subject Types
+
+![Subject types](../../assets/images/subjects-declaration.svg)
+<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
+
+--
+
+<!-- .element: data-transition="none" -->
+### Subject Types
+
+![Subject types](../../assets/images/subjects.svg)
+<!-- .element: style="padding: 30px; display: inline-block; vertical-align: middle;" -->
 
 ---
 
@@ -188,72 +178,42 @@ permalink: /slides/higher-order/
 
 ---
 
-### Representing discrete states
+###### Concat
 
-**State**
-<!-- .element: class="fragment" data-fragment-index="1" style="display: inline-block; vertical-align: middle;" -->
-
-<small>"the particular condition that someone or something is in at a specific time"</small>
-<!-- .element: class="fragment" data-fragment-index="1" style="display: inline-block; vertical-align: middle;" -->
-<small>"a physical condition as regards internal or molecular form or structure"</small>
-<!-- .element: class="fragment" data-fragment-index="2" style="display: inline-block; vertical-align: middle;" -->
-
-**Event**
-<!-- .element: class="fragment" data-fragment-index="3" style="display: inline-block; vertical-align: middle;" -->
-
-<small>"a thing that happens or takes place, especially one of importance"</small>
-<!-- .element: class="fragment" data-fragment-index="3" style="display: inline-block; vertical-align: middle;" -->
-<small>"a single occurrence of a process, e.g. the ionization of one atom"</small>
-<!-- .element: class="fragment" data-fragment-index="4" style="display: inline-block; vertical-align: middle;" -->
-
-<small>source: <a href="https://en.oxforddictionaries.com/">Oxford English Living Dictionaries</a></small>
-<!-- .element: class="fragment" data-fragment-index="1" style="display: inline-block; position: absolute; right: 0px;" -->
-
---
-
-#### Working Definition
-
-**State** → Extended
-
-**Event** → Punctate
-
----
-
-<!-- .element: data-transition="default none" -->
-![SelectMany](../../assets/images/selectmany-events-hidden.svg)
-
---
-
-<!-- .element: data-transition="none none" -->
-![SelectMany](../../assets/images/selectmany-events-in.svg)
-
---
-
-<!-- .element: data-transition="none none" -->
-![SelectMany](../../assets/images/selectmany-states.svg)
-
---
-
-<!-- .element: data-transition="none default" -->
-![SelectMany](../../assets/images/selectmany-events-out.svg)
+![Concat](../../assets/images/concatwindow.svg)
 
 ---
 
 ###### Merge
 
-![Merge](../../assets/images/merge.svg)
+![Merge](../../assets/images/mergewindow.svg)
 
 ---
 
-###### Amb
+###### Switch
 
-![Amb](../../assets/images/amb.svg)
+![Switch](../../assets/images/switch.svg)
 
----
+</script>
+</section>
 
-###### Concat
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+<script type="text/template">
 
-![Concat](../../assets/images/concat.svg)
+![Bonsai](../../assets/images/bonsai-lettering.svg)
+
+### Questions?
+[neurogears.org/swc-2021](https://neurogears.org/swc-2021)
+<table style="width: 100%;">
+  <tr>
+    <th style="vertical-align: middle; width: 50%; height: 100px; padding-left: 100px">
+      <img alt="NeuroGEARS" src="../../assets/images/neurogears.svg"/>
+    </th>
+    <th style="vertical-align: middle; width: 50%; height: 100px; align: right">
+      <img alt="SWC" src="../../assets/images/swc.png"/>
+    </th>
+  </tr>
+</table>
 
 </script>
 </section>
