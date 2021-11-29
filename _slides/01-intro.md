@@ -154,30 +154,6 @@ permalink: /slides/intro/
 
 ---
 
-<!-- .element: data-transition="default none" -->
-### Representing discrete states
-![SelectMany](../../assets/images/selectmany-events-hidden.svg)
-
---
-
-<!-- .element: data-transition="none none" -->
-### Representing discrete states
-![SelectMany](../../assets/images/selectmany-events-in.svg)
-
---
-
-<!-- .element: data-transition="none none" -->
-### Representing discrete states
-![SelectMany](../../assets/images/selectmany-states.svg)
-
---
-
-<!-- .element: data-transition="none default" -->
-### Representing discrete states
-![SelectMany](../../assets/images/selectmany-events-out.svg)
-
----
-
 ![Bonsai workflow editor](../../assets/images/editor.jpg)
 
 ---

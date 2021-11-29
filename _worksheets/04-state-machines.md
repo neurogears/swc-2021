@@ -148,6 +148,25 @@ Translating a state machine diagram into a Bonsai workflow begins by identifying
 
 *Try out your state machine and introduce variations to the task behavior and conditions.*
 
-### **Exercise 6 (Optional):** 2-alternative forced choice task
+### **Exercise 6 (Optional):** Go/No-Go task
 
-### **Exercise 7 (Optional):** Conditional place-preference
+Implement the following trial structure for a Go/No-Go task.
+
+![Go/No-Go Task]({{ site.baseurl }}/assets/images/go-nogo-task.svg)
+
+* Trials should be sampled from a uniform distribution using the `Numerics` package (install from `Tools` > `Manage Packages`).
+* Response events should be based on a button press, and reject events on a timeout.
+* Make sure to implement different visual or auditory feedback for either the cue or reward/failure states.
+
+**Suggestion**: To sample values from a discrete uniform distribution, you can use the following workflow: ![Stimulus response reward outcome]({{ site.baseurl }}/assets/images/samplediscreteuniform.svg)
+{: .notice--info}
+
+* Record a timestamped chronological log of trial types and rewards into a CSV file using a `BehaviorSubject`.
+
+### **Exercise 7 (Optional):** Conditioned place preference
+
+Implement the following trial structure for conditioned place preference. `enter` and `leave` events should be triggered in real-time from the camera, by tracking an object moving in or out of a region of interest (ROI). `Reward` should be triggered once upon entering the ROI, and not repeat again until the object exits the ROI and the ITI has elapsed.
+
+![Conditioned Place Preference]({{ site.baseurl }}/assets/images/placepreference.svg)
+
+**Suggestion**: There are several ways to implement ROI activation, so feel free to explore different ideas. Consider using either `Crop`, `RoiActivity`, or `ContainsPoint` as part of different strategies to implement the `enter` and `leave` events.
