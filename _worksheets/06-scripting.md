@@ -141,7 +141,9 @@ To do this, we can use the `previous` variable which is storing the position of 
 When a dot is regenerated, the `active` value for that dot should be set to `DotLifetime`. Then, for each frame where the dot is active (i.e. the `active` value is larger than zero), keep the same position of the previous frame, and decrease by one the number of frames left for the dot to be regenerated.
 
 <details>
-  <summary>Click to show the solution</summary>
+  <summary markdown='span'>
+    Click to show the solution
+  </summary>
 
 ```c#
     public IObservable<Vector2[]> Process(IObservable<FrameEvent> source)
@@ -195,7 +197,9 @@ Note that the `velocity` vector will be a 2D vector in (X,Y) cartesian coordinat
 We also need to take into account that points very close to the edge of the random dot field might go outside the field when we add the displacement. In case the dot goes outside of the field, we should make it immediately regenerate.
 
 <details>
-  <summary>Click to show the solution</summary>
+  <summary markdown='span'>
+    Click to show the solution
+  </summary>
 
 ```c#
     public IObservable<Vector2[]> Process(IObservable<FrameEvent> source)
@@ -256,7 +260,9 @@ We also need to take into account that points very close to the edge of the rand
 Finally, we want to make sure only a specified proportion of the dots are moving coherently. The remaining points should move in a random direction which is decided when the point is regenerated. The probability of each point to move in the coherent direction is given by the `Coherence` property.
 
 <details>
-  <summary>Click to show the solution</summary>
+  <summary markdown='span'>
+    Click to show the solution
+  </summary>
 
 ```c#
     public IObservable<Vector2[]> Process(IObservable<FrameEvent> source)

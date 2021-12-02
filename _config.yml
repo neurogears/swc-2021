@@ -9,7 +9,9 @@ baseurl: "/swc-2021"
 
 twitter_username: bonsai_rx
 github_username:  neurogears
-markdown: CommonMarkGhPages
+
+kramdown:
+  parse_block_html: true
 
 plugins:
   - jekyll-seo-tag
